@@ -33,6 +33,7 @@ public class JogoAdivinhacao {
 
         while (!continua.equals("n")){
             numeroPensado = new Random().nextInt(100);
+            System.out.println(numeroPensado);
             numeroAdivinha = 101;
 
             if(contador < 1){
@@ -79,21 +80,21 @@ public class JogoAdivinhacao {
             }else if(continua.equals("n")){
                 if (contador >= 2){
                     mediaFinalTentativasPartidas = totalTentativasJogoTodasPartidas/contadorPartidas;
-                    if(mediaFinalTentativasPartidas>=8){
+                    if(mediaFinalTentativasPartidas>=8) {
                         fraseFinalGame = "Vish!! Pode melhorar... Continue praticando, seu resultado foi bem abaixo do esperado...";
+                    }else if(mediaFinalTentativasPartidas == 1) {
+                        fraseFinalGame = " Wooooooooooow!!!!!! SUA MÉDIA É " + mediaFinalTentativasPartidas + "?!!!! Absolutamente incrível, você com certeza não é humano! (ou é um programador rsrsrs)";
                     }else if(mediaFinalTentativasPartidas<=5){
                         fraseFinalGame = " Parabéns, você é muito bom nesse jogo! Resultado além do esperado!";
-                    }else if(mediaFinalTentativasPartidas <= 1){
-                        fraseFinalGame = " Wooooooooooow!!!!!! SUA MÉDIA É "+mediaFinalTentativasPartidas+"?!!!! Absolutamente incrível, você com certeza não é humano! (ou é um programador rsrsrs)"                                ;
                     }else {
                         fraseFinalGame = " Parabéns, seu resultado está dentro do esperado.";
-                        
+
                     }
                     System.out.println("Muito obrigado por jogar!");
                     System.out.println("Você jogou " + contadorPartidas + " partidas, com um total de " + totalTentativasJogoTodasPartidas + " tentativas!");
                     System.out.println("A sua média é de " + mediaFinalTentativasPartidas + " tentativas por partida." + fraseFinalGame);
                     break;
-                    
+
                 }
                 System.out.println("Certo, até breve!");
                 break;
